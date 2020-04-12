@@ -23,5 +23,8 @@
     <ClInclude Include="ex.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="screen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
