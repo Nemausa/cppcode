@@ -155,6 +155,7 @@
   <ItemGroup>
     <ClInclude Include="ex.h" />
     <ClInclude Include="screen.h" />
+    <ClInclude Include="vec.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

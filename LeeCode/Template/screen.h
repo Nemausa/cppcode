@@ -6,16 +6,18 @@
 using pos = std::string::size_type;
 template<pos, pos> class Screen;
 
-template<pos H, pos W> std::istream& operator>>(std::istream&, Screen<H, W>&);
+template<pos H, pos W>
+std::istream& operator>>(std::istream&, Screen<H, W>&);
 
-template<pos H, pos W> std::ostream& operator<<(std::ostream&, const Screen<H, W>&);
+template<pos H, pos W>
+std::ostream& operator<<(std::ostream&, const Screen<H, W>&);
 
 template <pos H, pos W> class Screen {
     friend std::istream& operator>><H, W>(std::istream&, Screen<H, W>&);
     friend std::ostream& operator<<<H, W>(std::ostream&, const Screen<H, W>&);
 
 public:
-	//Screen() = default;
+	Screen() = default;
 	Screen(char c) : contents(H*W, c) {}
 
 	char get() const { return contents[cursor]; }
@@ -49,13 +51,15 @@ std::ostream& operator<<(std::ostream& os, const Screen<H, W>& s)
 	return os;
 }
 
-template <pos H, pos W> inline Screen<H, W>& Screen<H, W>::move(pos r, pos c)
+template <pos H, pos W>
+inline Screen<H, W>& Screen<H, W>::move(pos r, pos c)
 {
 	cursor = r * W + c;
 	return *this;
 }
 
-template <pos H, pos W> inline Screen<H, W>& Screen<H, W>::set(char ch)
+template <pos H, pos W> 
+inline Screen<H, W>& Screen<H, W>::set(char ch)
 {
 	contents[cursor++] = ch;
 	cursor = std::min(cursor, H * W);

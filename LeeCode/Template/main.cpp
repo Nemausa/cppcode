@@ -6,4 +6,13 @@ int main()
 	print_array(a);
 
 	screen();
+
+	print19();
+	pirnt20();
+	print21();
+	print52();
+	print53();
+	print56();
+	print63();
+	
 }
